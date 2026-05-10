@@ -5,6 +5,7 @@
   "description": "My Electron application description",
   "main": "src/index.js",
   "private": true,
+  "homepage": "https://github.com/GregoryFarmer/SpaceInvaders",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
