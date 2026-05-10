@@ -11,6 +11,8 @@ To get started, please run the following commands.
 
 This command installs the dependencies required for the game.
 ## Step 2.)
-```npm run make```
+```npm run build```
 
-This command will create a ./out directory which will contain your setup files. To install the game onto your system, head to out -> make -> squirrel.windows -> x64 -> run spaceinvaders-1.0.0 Setup.exe. 
+### Windows:
+This command will create a ./dist directory which will contain your setup files. To install the game onto your system, head to dist -> run spaceinvaders Setup 1.0.0.exe. 
+### ArchLinux:
