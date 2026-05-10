@@ -15,10 +15,6 @@
     "build": "electron-builder"
   },
   "keywords": [],
-  "author": {
-    "name": "Breezist",
-    "email": "wafflorus@gmail.com"
-  },
   "license": "MIT",
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1",
