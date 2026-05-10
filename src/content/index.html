@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Space Invaders</title>
+
+<link rel="stylesheet" href="./styles/index.css">
+<link rel="icon" type="image/png" href="./assets/images/favicon.png">
+
+</head>
+  <body>
+    <div id="gameContainer">
+      <div id="mainMenu" class="menu">
+        <h1>Space Invaders</h1>
+        <button id="startBtn">Start</button>
+
+        <div id="leaderboard">
+          <h2>Leaderboard</h2>
+          <ul id="leaderboardList"></ul>
+        </div>
+      </div>
+
+      <div id="gameOverMenu" class="menu"> 
+        <h1>Game over!</h1>
+        <button id="retryBtn">Retry</button>
+        <button id="menuBtn">Main Menu</button>
+      </div>
+
+      <div id="gameWonMenu" class="menu">
+        <h1>You win!</h1>
+        <div id="timeDisplay">Time: 0.00s</div>
+
+        <div id="winLayout">
+          <form id="timeForm">
+            <input type="text" id="playerName" placeholder="Enter your name" required>
+            <button type="submit">Submit Time</button>
+          </form>
+
+          <div id="winButtons">
+            <button id="winRetryBtn">Retry</button>
+            <button id="winMenuBtn">Main Menu</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="score">Score: 0</div>
+      <img src="./assets/images/player.png" id="player">
+    </div>
+  </body>
+
+  <script type="module" src="./scripts/app.js"></script>
+</html>

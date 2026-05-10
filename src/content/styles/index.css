@@ -1,0 +1,266 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: black;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#gameContainer {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  background: black;
+  overflow: hidden;
+  border: 2px solid #ffffff33;
+  box-shadow: 0 0 20px #ffffff55;
+}
+
+#player {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  filter: none;
+}
+
+@keyframes playerExplode {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 10px #ff7a7a);
+  }
+  50% {
+    transform: scale(1.8) rotate(180deg);
+    opacity: 0.7;
+    filter: drop-shadow(0 0 20px #ff5050);
+  }
+  100% {
+    transform: scale(0) rotate(360deg);
+    opacity: 0;
+    filter: drop-shadow(0 0 30px #ff7a7a);
+  }
+}
+
+.player-death {
+  animation: playerExplode 0.6s ease-out forwards;
+}
+
+.invader {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+}
+
+.explosion {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+
+  background-image: url("../assets/images/explosion.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  animation: explode 0.5s ease-out forwards;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0.5) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes menuFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-show {
+  animation: menuFadeIn 0.5s ease-out forwards;
+}
+
+.bullet {
+  position: absolute;
+  width: 4px;
+  height: 12px;
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 0 8px white;
+}
+
+.enemyBullet {
+  position: absolute;
+  width: 5px;
+  height: 16px;
+  background: linear-gradient(#D3D3D3, #D3D3D3);
+  border-radius: 50%;
+  box-shadow: 0 0 10px #D3D3D3, 0 0 20px #D3D3D3;
+}
+
+#score {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  color: white;
+  font-size: 24px;
+}
+
+.menu {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.85);
+  color: white;
+  font-size: 48px;
+  gap: 20px;
+  z-index: 10;
+}
+
+.menu button {
+  font-size: 24px;
+  padding: 10px 30px;
+  cursor: pointer;
+  background: #ffffff22;
+  border: 2px solid #f8f8f8;
+  color: white;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.menu button:hover {
+  background: #ffffff55;
+  box-shadow: 0 0 10px #ffffff;
+}
+
+.star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.2;
+  transition: opacity 0.2s linear;
+  box-shadow: 0 0 6px white;
+}
+
+#timeForm {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 260px;
+  animation: menuFadeIn 0.5s ease-out forwards;
+}
+
+.timeForm-hide {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#winButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#winLayout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 10px;
+}
+
+#timeDisplay {
+  font-size: 28px;
+  color: white;
+  text-shadow: 0 0 10px #ffffffaa;
+  margin-bottom: 10px;
+  animation: menuFadeIn 0.5s ease-out forwards;
+}
+
+#timeForm input {
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 2px solid #ffffff55;
+  background: #000000aa;
+  color: white;
+  text-align: center;
+  outline: none;
+  transition: 0.2s;
+}
+
+#timeForm input::placeholder {
+  color: #ccccccaa;
+}
+
+#timeForm input:focus {
+  border-color: white;
+  box-shadow: 0 0 10px white;
+}
+
+#timeForm button {
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  background: #ffffff22;
+  border: 2px solid #f8f8f8;
+  color: white;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+#timeForm button:hover {
+  background: #ffffff55;
+  box-shadow: 0 0 10px #ffffff;
+}
+
+#leaderboard {
+  position: absolute;
+  right: 40px;
+  top: 120px;
+  text-align: left;
+  font-size: 24px;
+  animation: menuFadeIn 0.5s ease-out forwards;
+}
+
+#leaderboard h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #ffffffaa;
+}
+
+#leaderboardList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#leaderboardList li {
+  color: white;
+  text-shadow: 0 0 6px #ffffff88;
+}
