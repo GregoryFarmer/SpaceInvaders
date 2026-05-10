@@ -4,7 +4,7 @@ Do you remember the classic 1978 shoot-em-up arcade game Space Invaders? I recre
 # Installation
 To get started, please run the following commands.
 > [!NOTE]
-> This officially has support for Windows operating systems; other operating systems may work, but will be unofficially supported.
+> You must be using a Node version at or greater than v22 for installation to work properly. 
 
 ## Step 1.) 
 ```npm install```
