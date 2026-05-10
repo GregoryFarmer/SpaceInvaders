@@ -7,6 +7,11 @@
   "private": true,
   "homepage": "https://github.com/GregoryFarmer/SpaceInvaders",
 
+  "author": {
+    "name": "Breezist",
+    "email": "wafflorus@gmail.com"
+  },
+
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
@@ -45,7 +50,8 @@
 
     "linux": {
       "target": ["AppImage", "deb"],
-      "category": "Utility"
+      "category": "Utility",
+      "icon": "src/content/assets/images/favicon.png"
     },
 
     "win": {
